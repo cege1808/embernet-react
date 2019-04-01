@@ -1,0 +1,22 @@
+# Index configuration file for Datastore
+# Note on order: the way Google orders and responds to
+# queries, we need equality first, then inequalities, then
+# finally whatever we want to sort in ASC/DESC
+# run in terminal: 'gcloud datastore indexes create index.yaml'
+indexes:
+- kind: EnvironmentalData
+  properties:
+    - name: created_at
+      direction: desc
+    - name: node_id
+      direction: asc
+- kind: EnvironmentalData
+  properties:
+  - name: node_id
+  - name: created_at
+    direction: desc
+- kind: Node
+  properties:
+    - name: node_id
+    - name: created_at
+      direction: desc
