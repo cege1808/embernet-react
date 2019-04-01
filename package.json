@@ -2,6 +2,7 @@
   "name": "embernet-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cege1808.github.io/embernet-react",
   "dependencies": {
     "@google-cloud/datastore": "^3.1.2",
     "bootstrap": "^4.3.1",
@@ -25,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pre-deploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +40,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dotenv": "^7.0.0"
+    "dotenv": "^7.0.0",
+    "gh-pages": "^2.0.1"
   }
 }
