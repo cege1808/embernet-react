@@ -31,11 +31,18 @@ export class MapContainer extends React.Component {
 
   renderMarkers(){
     let markers = [];
+    const {google} = this.props;
     this.props.markers.forEach((place) => {
       let position = {lat: place.lat, lng: place.lng};
+      console.log(place.status);
       markers.push(
         <Marker key={place.id} id={place.id} position={position} data={place}
-       onClick={this.handleMarkerClick} />
+       onClick={this.handleMarkerClick}
+       icon={{
+        url: 'icons/pin-' + place.status + '.png',
+        anchor: new google.maps.Point(31,64),
+        scaledSize: new google.maps.Size(60,60)
+      } }/>
       );
     });
     // console.log(markers);

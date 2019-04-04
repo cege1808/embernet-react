@@ -572,7 +572,7 @@ class App extends Component {
   settingsPage(){
     return (
       <div className={`settings-sidebar ${this.state.pageSettings}`} onClick={this.handleSideBarClick}>
-          <h3>Jane Smith</h3>
+          <h3>Sam Lai</h3>
           <p>Add Node</p>
           <p>Notifications</p>
           <p>Logout</p>

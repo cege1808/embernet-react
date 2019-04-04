@@ -1,4 +1,7 @@
+// RUN "node uploader.js" in terminal
 var moment = require('moment');
+const csv = require('csv-parser');
+const fs = require('fs');
 var {Datastore} = require('@google-cloud/datastore');
 const datastore = new Datastore({
     projectId: 'embernet-api',
@@ -72,8 +75,25 @@ randominRange = (min, max) => {
   return Math.round(((Math.random() * (max - min + 1)) + min)*100)/100;
 }
 
-listNodes();
-listEnvironmentalData();
+// listNodes();
+// listEnvironmentalData();
+
+uploadCSV = (filename) =>{
+  fs.createReadStream(filename)
+  .pipe(csv())
+  .on('data', (row) => {
+    let data = JSON.parse(JSON.stringify(row));
+    data['created_at'] = moment().toISOString();
+    let info = {data: {attributes: data}};
+    console.log(info)
+    storeEnvironmentalData(info);
+  })
+  .on('end', () => {
+    console.log('CSV file successfully processed');
+  });
+}
+
+uploadCSV("./example.csv");
 
 // let amount = 100;
 // let interval = setInterval(()=>{

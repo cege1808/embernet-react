@@ -151,11 +151,15 @@
   background-color: green;
 }
 
-.node-indicator.medium{
-  background-color: orange;
+.node-indicator.moderate{
+  background-color: yellow;
 }
 
 .node-indicator.high{
+  background-color: orange;
+}
+
+.node-indicator.extreme{
   background-color: red;
 }
 

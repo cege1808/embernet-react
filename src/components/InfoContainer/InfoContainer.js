@@ -28,7 +28,7 @@ export default class InfoContainer extends React.Component {
   getLocationName = (position) => {
     Geocode.fromLatLng(position.lat, position.lng).then(
         response => {
-          const address = response.results[10].formatted_address;
+          const address = response.results.slice(-2, -1)[0].formatted_address;
           // console.log(response);
           this.setState({location: address});
         },
