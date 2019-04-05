@@ -53,6 +53,15 @@ class App extends Component {
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleRowClick = this.handleRowClick.bind(this);
     this.handleToggleMapTable = this.handleToggleMapTable.bind(this);
+    this.handleChangeStart = this.handleChangeStart.bind(this);
+    this.handleChangeEnd = this.handleChangeEnd.bind(this);
+    this.handleChangeLive = this.handleChangeLive.bind(this);
+    this.intervalHandler = this.intervalHandler.bind(this);
+    this.getAllNodes = this.getAllNodes.bind(this);
+    // this.getNode = this.getAllNodes.bind(this);
+    // this.getDataHandler = this.getDataHandler.bind(this);
+    // this.getData = this.getData.bind(this);
+    this.getChartRef = this.getChartRef.bind(this);
   }
 
   handleLogin = (loggedIn, token) => {
@@ -214,7 +223,7 @@ class App extends Component {
             }
             // console.log(e.batch.entityResults);
             let data = e.batch.entityResults[0].entity.properties;
-            // console.log(data);
+            console.log(data);
 
             this.setState({
               currentNodeData: {

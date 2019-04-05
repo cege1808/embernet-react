@@ -6,15 +6,15 @@
 indexes:
 - kind: EnvironmentalData
   properties:
-    - name: created_at
-      direction: desc
     - name: node_id
       direction: asc
+    - name: created_at
+      direction: desc
 - kind: EnvironmentalData
   properties:
   - name: node_id
   - name: created_at
-    direction: desc
+    direction: asc
 - kind: Node
   properties:
     - name: node_id
