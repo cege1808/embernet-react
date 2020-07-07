@@ -93,30 +93,30 @@ uploadCSV = (filename) =>{
   });
 }
 
-uploadCSV("./example.csv");
+// uploadCSV("./example.csv");
 
-// let amount = 100;
-// let interval = setInterval(()=>{
-//   let info = {
-//   data: {
-//       attributes: {
-//         node_id: 1,
-//         temperature: randominRange(8,12) ,
-//         pressure: randominRange(1000,1100),
-//         humidity: randominRange(30,35),
-//         eco2: 0,
-//         tvoc: 400,
-//         created_at: moment().toISOString()
-//       }
-//     }
-//   }
-//   console.log(info);
-//   amount--;
-//   if(amount == 0){
-//     clearInterval(interval);
-//   }
-//   storeEnvironmentalData(info);
-// }, 60*1000)
+let amount = 20;
+let interval = setInterval(()=>{
+  let info = {
+  data: {
+      attributes: {
+        node_id: 1,
+        temperature: randominRange(23,24) ,
+        pressure: randominRange(1000,1100),
+        humidity: randominRange(30,35),
+        eco2: 0,
+        tvoc: 400,
+        created_at: moment().toISOString()
+      }
+    }
+  }
+  console.log(info);
+  amount--;
+  if(amount == 0){
+    clearInterval(interval);
+  }
+  storeEnvironmentalData(info);
+}, 60*1000)
 
 // var message1 = {
 //   data: {
