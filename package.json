@@ -12,7 +12,7 @@
     "gh-pages": "^2.0.1",
     "google-maps-react": "^2.0.2",
     "http2": "^3.3.7",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "rc-datetime-picker": "^1.6.1",
     "react": "^16.8.5",
